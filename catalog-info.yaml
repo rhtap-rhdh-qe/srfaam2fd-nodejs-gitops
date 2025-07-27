@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: srfaam2fd-nodejs-gitops
+  description: This is GitOps manifest for srfaam2fd-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=srfaam2fd-nodejs
+    backstage.io/kubernetes-id: srfaam2fd-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: srfaam2fd-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:srfaam2fd-nodejs
